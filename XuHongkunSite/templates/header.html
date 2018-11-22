@@ -10,7 +10,13 @@
 				<li><a href="{% url 'blog:blog_title' %}">BLOG</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right" style="margin-right:10px">
-                <li><a href="#">LOGIN</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="#">{{ user.username }}</a></li>
+                    <li><a href="#">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+                {% endif %}
+                <!--用这种方式链接另一个html文件-->
 			</ul>
 		</div>
 	</nav>

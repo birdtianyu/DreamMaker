@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'newApplication',
+    'account',
 
 ]
 
@@ -127,3 +128,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),  # ./static
 ]
+
+
+# 我需要重定向Django内置Login()方法中的全局变量
+LOGIN_REDIRECT_URL = '/blog/'
