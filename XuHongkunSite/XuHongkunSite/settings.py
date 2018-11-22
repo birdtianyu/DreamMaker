@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'newApplication',
+
 ]
 
 MIDDLEWARE = [
@@ -56,8 +58,8 @@ ROOT_URLCONF = 'XuHongkunSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],  # ./templates
+        'APP_DIRS': False,  # 禁用默认查找templates方式
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -120,3 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 自己添加，目的：在根目录里存放静态文件
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # ./static
+]

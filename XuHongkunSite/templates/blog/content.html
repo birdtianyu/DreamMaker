@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}blog article{% endblock %}
+
+{% block content %}
+<div class="row text-center vertical-middle-sm">
+    <h1>{{ article.title }}</h1>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <p class="text-center"><span>{{ article.author.username }}</span><span style="margin-left:20px">{{ publish }}</span></p>
+<div>{{ article.body }}</div>
+</div>
+    <div class="col-xs-6 col-md-4">
+        <h2>Jack Ma</h2>
+        <p>"让天下没有难做的生意"</p>
+        <img width="300px" src="https://docs.alibabagroup.com/assets2/images/cn/home/home_banner_1.png">
+    </div>
+</div>
+{% endblock %}

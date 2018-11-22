@@ -12,4 +12,5 @@ class BlogArticlesAdmin(admin.ModelAdmin):
     date_hierarchy = "publish"
     ordering = ['-publish', 'author']
 
-admin.site.register(BlogArticles, BlogArticlesAdmin)  # 将BlogArticles, BlogArticlesAdmin类注册到admin中
+# 将BlogArticles, BlogArticlesAdmin类注册到admin中
+admin.site.register(BlogArticles, BlogArticlesAdmin)  # 在admin界面显示Blog articles

@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        #bg {
+            height: 800px;
+            background: linear-gradient(pink, yellow);
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+
+<body>
+{% include "header.html" %}
+<div id="bg" class="container">
+    {% block content %}{% endblock %}
+</div>
+{% include "footer.html" %}
+{% block javascript %}{% endblock %}
+</body>
+
+</html>
