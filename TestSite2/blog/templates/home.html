@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        body{
+            background-image: url("https://d3cbihxaqsuq0s.cloudfront.net/images/19599487_xl.jpg");
+            background-size: cover;
+            text-align: center;
+        }
+        h1{
+            background-color: aquamarine;
+        }
+        h2{
+            background-color: pink;
+        }
+        h3{
+            background-color: chocolate;
+        }
+    </style>>
+</head>
+
+<body>
+<a href="/add/4/5/">计算 4+5</a>
+<h1>{{ string }}</h1>
+
+<p>我的第1个<br><!-- 空元素,换行用 -->段落。</p>
+<p>我的第2个段落。</p>
+<hr>     <!-- 水平线 -->
+
+<a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8">这是一个链接</a>
+<hr>
+<div>
+    <h2>{{ string }}</h2>
+    <b>This text is bold</b><br>
+
+    <i>This text is italic</i><br>
+
+    <h2>
+        {% for i in TutorialList %}
+            {{ i }}
+        {% endfor %}
+    </h2>
+</div>
+
+<h3>{{ string }}</h3>
+<form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="提交">
+{#    <fieldset>#}
+{#        <legend>Personal information:</legend>#}
+{##}
+{#    </fieldset>#}
+</form>
+
+<p>
+    TODO:
+    {% for value in form %}
+    {{ value }}
+    {% endfor %}
+</p>
+
+<h3>
+    {% for key, value in info_dict.items %}
+        key: {{ key }} ->
+        value: {{ value }}
+        {% if not forloop.last %},{% endif %}
+    {% endfor %}
+</h3>
+</body>
+</html>
